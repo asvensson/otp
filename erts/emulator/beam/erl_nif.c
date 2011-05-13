@@ -918,6 +918,72 @@ ERL_NIF_TERM enif_make_tuple(ErlNifEnv* env, unsigned cnt, ...)
     return ret;
 }
 
+#ifdef ERL_NIF_INLINE
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple1(ErlNifEnv* env,
+						    ERL_NIF_TERM e1);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple2(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple3(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple4(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple5(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4,
+						    ERL_NIF_TERM e5);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple6(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4,
+						    ERL_NIF_TERM e5,
+						    ERL_NIF_TERM e6);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple7(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4,
+						    ERL_NIF_TERM e5,
+						    ERL_NIF_TERM e6,
+						    ERL_NIF_TERM e7);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple8(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4,
+						    ERL_NIF_TERM e5,
+						    ERL_NIF_TERM e6,
+						    ERL_NIF_TERM e7,
+						    ERL_NIF_TERM e8);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_tuple9(ErlNifEnv* env,
+						    ERL_NIF_TERM e1,
+						    ERL_NIF_TERM e2,
+						    ERL_NIF_TERM e3,
+						    ERL_NIF_TERM e4,
+						    ERL_NIF_TERM e5,
+						    ERL_NIF_TERM e6,
+						    ERL_NIF_TERM e7,
+						    ERL_NIF_TERM e8,
+						    ERL_NIF_TERM e9);
+#endif /* ERL_NIF_INLINE */
+
 ERL_NIF_TERM enif_make_tuple_from_array(ErlNifEnv* env, const ERL_NIF_TERM arr[], unsigned cnt)
 {
     Eterm* hp = alloc_heap(env,cnt+1);
@@ -964,6 +1030,72 @@ ERL_NIF_TERM enif_make_list(ErlNifEnv* env, unsigned cnt, ...)
 	return ret;
     }
 }
+
+#ifdef ERL_NIF_INLINE
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list1(ErlNifEnv* env,
+						   ERL_NIF_TERM e1);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list2(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list3(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list4(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list5(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4,
+						   ERL_NIF_TERM e5);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list6(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4,
+						   ERL_NIF_TERM e5,
+						   ERL_NIF_TERM e6);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list7(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4,
+						   ERL_NIF_TERM e5,
+						   ERL_NIF_TERM e6,
+						   ERL_NIF_TERM e7);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list8(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4,
+						   ERL_NIF_TERM e5,
+						   ERL_NIF_TERM e6,
+						   ERL_NIF_TERM e7,
+						   ERL_NIF_TERM e8);
+
+extern ERL_NIF_INLINE ERL_NIF_TERM enif_make_list9(ErlNifEnv* env,
+						   ERL_NIF_TERM e1,
+						   ERL_NIF_TERM e2,
+						   ERL_NIF_TERM e3,
+						   ERL_NIF_TERM e4,
+						   ERL_NIF_TERM e5,
+						   ERL_NIF_TERM e6,
+						   ERL_NIF_TERM e7,
+						   ERL_NIF_TERM e8,
+						   ERL_NIF_TERM e9);
+#endif /* ERL_NIF_INLINE */
 
 ERL_NIF_TERM enif_make_list_from_array(ErlNifEnv* env, const ERL_NIF_TERM arr[], unsigned cnt)
 {

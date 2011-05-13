@@ -153,25 +153,38 @@ typedef int ErlNifTSDKey;
 
 typedef ErlDrvThreadOpts ErlNifThreadOpts;
 
+#ifndef ERL_NIF_INLINE
+#  if defined(__GNUC__)
+#    define ERL_NIF_INLINE __inline__
+#  elif defined(__WIN32__)
+#    define ERL_NIF_INLINE __inline
+#  endif
+#endif
+
 #if (defined(__WIN32__) || defined(_WIN32) || defined(_WIN32_))
 #  define ERL_NIF_API_FUNC_DECL(RET_TYPE, NAME, ARGS) RET_TYPE (*NAME) ARGS
+#  define ERL_NIF_API_INLINE_FUNC_DECL(RET_TYPE, NAME, ARGS) RET_TYPE (*NAME) ARGS
 typedef struct {
 #  include "erl_nif_api_funcs.h"
 } TWinDynNifCallbacks;
 extern TWinDynNifCallbacks WinDynNifCallbacks;
 #  undef ERL_NIF_API_FUNC_DECL
+#  undef ERL_NIF_API_INLINE_FUNC_DECL
 #endif
 
 #if (defined(__WIN32__) || defined(_WIN32) || defined(_WIN32_)) && !defined(STATIC_ERLANG_DRIVER)
 #  define ERL_NIF_API_FUNC_MACRO(NAME) (WinDynNifCallbacks.NAME)
+#  define ERL_NIF_API_INLINE_FUNC_MACRO(NAME) (WinDynNifCallbacks.NAME)
 #  include "erl_nif_api_funcs.h"
 /* note that we have to keep ERL_NIF_API_FUNC_MACRO defined */
 
 #else /* non windows or included from emulator itself */
 
 #  define ERL_NIF_API_FUNC_DECL(RET_TYPE, NAME, ARGS) extern RET_TYPE NAME ARGS
+#  define ERL_NIF_API_INLINE_FUNC_DECL(RET_TYPE, NAME, ARGS) extern ERTS_INLINE RET_TYPE NAME ARGS
 #  include "erl_nif_api_funcs.h"
 #  undef ERL_NIF_API_FUNC_DECL
+#  undef ERL_NIF_API_INLINE_FUNC_DECL
 #endif
 
 
